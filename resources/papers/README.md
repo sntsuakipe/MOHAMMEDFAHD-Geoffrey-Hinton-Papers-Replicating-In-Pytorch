@@ -1,42 +1,106 @@
-# Papers Directory
+#!/usr/bin/env python3
+"""Download legally accessible PDF copies for the papers in this repository.
 
-This directory stores the original papers and reference notes used by this repository.
+This script intentionally avoids mirroring paywalled publisher PDFs. It only tries
+URLs that are marked as open-access in the manifest. If a paper has no verified
+open-access URL, it is skipped.
+"""
 
-## Table of contents
+from __future__ import annotations
 
-- [Relaxation and Its Role in Vision](./relaxation-and-its-role-in-vision.md)
-- [A Learning Algorithm for Boltzmann Machines](./a-learning-algorithm-for-boltzmann-machines.md)
-- [Learning Representations by Back-Propagating Errors](./learning-representations-by-back-propagating-errors.md)
-- [Distributed Representations](./distributed-representations.md)
-- [Learning Internal Representations by Error Propagation](./learning-internal-representations-by-error-propagation.md)
-- [Adaptive Mixtures of Local Experts](./adaptive-mixtures-of-local-experts.md)
-- [How Neural Networks Learn from Experience](./how-neural-networks-learn-from-experience.md)
-- [Stochastic Neighbor Embedding](./stochastic-neighbor-embedding.md)
-- [Autoencoders, Minimum Description Length and Helmholtz Free Energy](./autoencoders-minimum-description-length-and-helmholtz-free-energy.md)
-- [The Helmholtz Machine](./the-helmholtz-machine.md)
-- [The Wake-Sleep Algorithm](./the-wake-sleep-algorithm.md)
-- [Products of Experts](./products-of-experts.md)
-- [Training Products of Experts by Minimizing Contrastive Divergence](./training-products-of-experts-by-minimizing-contrastive-divergence.md)
-- [A Fast Learning Algorithm for Deep Belief Nets](./a-fast-learning-algorithm-for-deep-belief-nets.md)
-- [Reducing the Dimensionality of Data with Neural Networks](./reducing-the-dimensionality-of-data-with-neural-networks.md)
-- [Restricted Boltzmann Machines for Collaborative Filtering](./restricted-boltzmann-machines-for-collaborative-filtering.md)
-- [Visualizing Data using t-SNE](./visualizing-data-using-t-sne.md)
-- [Deep Boltzmann Machines](./deep-boltzmann-machines.md)
-- [Rectified Linear Units Improve Restricted Boltzmann Machines](./rectified-linear-units-improve-restricted-boltzmann-machines.md)
-- [Deep Neural Networks for Acoustic Modeling in Speech Recognition](./deep-neural-networks-for-acoustic-modeling-in-speech-recognition.md)
-- [ImageNet Classification with Deep Convolutional Neural Networks (AlexNet)](./imagenet-classification-with-deep-convolutional-neural-networks-alexnet.md)
-- [On the Importance of Initialization and Momentum in Deep Learning](./on-the-importance-of-initialization-and-momentum-in-deep-learning.md)
-- [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](./dropout-a-simple-way-to-prevent-neural-networks-from-overfitting.md)
-- [Distilling the Knowledge in a Neural Network](./distilling-the-knowledge-in-a-neural-network.md)
-- [Layer Normalization](./layer-normalization.md)
-- [Using Fast Weights to Attend to the Recent Past](./using-fast-weights-to-attend-to-the-recent-past.md)
-- [Dynamic Routing Between Capsules](./dynamic-routing-between-capsules.md)
-- [Matrix Capsules with EM Routing](./matrix-capsules-with-em-routing.md)
-- [How to Represent Part-Whole Hierarchies in a Neural Network](./how-to-represent-part-whole-hierarchies-in-a-neural-network.md)
-- [The Forward-Forward Algorithm: Some Preliminary Investigations](./the-forward-forward-algorithm-some-preliminary-investigations.md)
+import json
+import ssl
+import time
+import urllib.error
+import urllib.request
+from pathlib import Path
+from typing import Any, Dict, List, Optional
 
-## Notes
+ROOT = Path(__file__).resolve().parent
+PDF_DIR = ROOT / "pdf"
+MANIFEST_PATH = ROOT / "manifest.json"
 
-- Each entry below is a local reference stub for the corresponding paper.
-- Add the official PDF or bibliographic link for each paper in the file itself.
-- The relative links below point to the matching notebook implementation in the repository root.
+
+def load_manifest() -> List[Dict[str, Any]]:
+    if not MANIFEST_PATH.exists():
+        raise FileNotFoundError(f"Manifest not found: {MANIFEST_PATH}")
+    with MANIFEST_PATH.open("r", encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def save_manifest(entries: List[Dict[str, Any]]) -> None:
+    with MANIFEST_PATH.open("w", encoding="utf-8") as fh:
+        json.dump(entries, fh, indent=2, ensure_ascii=False)
+        fh.write("\n")
+
+
+def fetch_with_retries(url: str, timeout: int = 20, max_retries: int = 3) -> bytes:
+    last_error: Optional[Exception] = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(request, timeout=timeout, context=ssl.create_default_context()) as resp:
+                body = resp.read()
+                if not body:
+                    raise RuntimeError(f"Empty response from {url}")
+                return body
+        except Exception as exc:  # pragma: no cover - network errors are expected
+            last_error = exc
+            time.sleep(1.5 * attempt)
+    raise RuntimeError(f"Failed to fetch {url}: {last_error}")
+
+
+def download_entry(entry: Dict[str, Any]) -> Dict[str, Any]:
+    title = entry.get("title", "unknown")
+    slug = entry.get("slug") or title.lower().replace(" ", "-")
+    pdf_url = entry.get("pdf_url")
+
+    if not pdf_url:
+        entry["status"] = "skipped_no_open_pdf"
+        entry["downloaded_pdf"] = None
+        print(f"[SKIP] {title}: no verified open-access PDF URL")
+        return entry
+
+    PDF_DIR.mkdir(parents=True, exist_ok=True)
+    destination = PDF_DIR / f"{slug}.pdf"
+
+    try:
+        data = fetch_with_retries(pdf_url)
+    except Exception as exc:
+        entry["status"] = "failed_download"
+        entry["downloaded_pdf"] = None
+        entry["error"] = str(exc)
+        print(f"[FAIL] {title}: {exc}")
+        return entry
+
+    destination.write_bytes(data)
+    entry["status"] = "downloaded"
+    entry["downloaded_pdf"] = str(destination.name)
+    entry["downloaded_at"] = __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat()
+    print(f"[OK] {title} -> {destination.name}")
+    return entry
+
+
+def main() -> None:
+    entries = load_manifest()
+    changed = False
+
+    for entry in entries:
+        if entry.get("status") == "downloaded":
+            print(f"[KEEP] {entry.get('title')}: already downloaded")
+            continue
+        updated = download_entry(entry)
+        if updated != entry:
+            changed = True
+
+    if changed:
+        save_manifest(entries)
+        print(f"\nUpdated manifest: {MANIFEST_PATH}")
+    else:
+        print("\nNo changes needed.")
+
+    print(f"PDFs saved under: {PDF_DIR}")
+
+
+if __name__ == "__main__":
+    main()

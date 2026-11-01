@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Relaxation and Its Role in Vision",
+    "slug": "relaxation-and-its-role-in-vision",
+    "source_url": "https://www.robots.ox.ac.uk/~az/lectures/ia/2015/hinton-phi-thesis.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "A Learning Algorithm for Boltzmann Machines",
+    "slug": "a-learning-algorithm-for-boltzmann-machines",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/boltz.pdf",
+    "pdf_url": "https://www.cs.toronto.edu/~hinton/absps/boltz.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Learning Representations by Back-Propagating Errors",
+    "slug": "learning-representations-by-back-propagating-errors",
+    "source_url": "https://www.iro.umontreal.ca/~lisa/bib/pub_subject/files/rumelhart_hinton_williams_1986_learning_representations_by_back_propagating_errors.pdf",
+    "pdf_url": "https://www.iro.umontreal.ca/~lisa/bib/pub_subject/files/rumelhart_hinton_williams_1986_learning_representations_by_back_propagating_errors.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Distributed Representations",
+    "slug": "distributed-representations",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/phil.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Learning Internal Representations by Error Propagation",
+    "slug": "learning-internal-representations-by-error-propagation",
+    "source_url": "https://crl.ucsd.edu/~elman/Papers/learning_internal_representations_1985.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Adaptive Mixtures of Local Experts",
+    "slug": "adaptive-mixtures-of-local-experts",
+    "source_url": "https://papers.nips.cc/paper/201-adaptive-mixtures-of-local-experts.pdf",
+    "pdf_url": "https://papers.nips.cc/paper/201-adaptive-mixtures-of-local-experts.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "How Neural Networks Learn from Experience",
+    "slug": "how-neural-networks-learn-from-experience",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/experience.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Stochastic Neighbor Embedding",
+    "slug": "stochastic-neighbor-embedding",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/sne.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Autoencoders, Minimum Description Length and Helmholtz Free Energy",
+    "slug": "autoencoders-minimum-description-length-and-helmholtz-free-energy",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/aoda.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "The Helmholtz Machine",
+    "slug": "the-helmholtz-machine",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/helmholtz.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "The Wake-Sleep Algorithm",
+    "slug": "the-wake-sleep-algorithm",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/ws.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Products of Experts",
+    "slug": "products-of-experts",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/exps.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Training Products of Experts by Minimizing Contrastive Divergence",
+    "slug": "training-products-of-experts-by-minimizing-contrastive-divergence",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/contrastive.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "A Fast Learning Algorithm for Deep Belief Nets",
+    "slug": "a-fast-learning-algorithm-for-deep-belief-nets",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/fastnc.pdf",
+    "pdf_url": "https://www.cs.toronto.edu/~hinton/absps/fastnc.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Reducing the Dimensionality of Data with Neural Networks",
+    "slug": "reducing-the-dimensionality-of-data-with-neural-networks",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/reducing.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Restricted Boltzmann Machines for Collaborative Filtering",
+    "slug": "restricted-boltzmann-machines-for-collaborative-filtering",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/rcm.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Visualizing Data using t-SNE",
+    "slug": "visualizing-data-using-t-sne",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/tsne.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Deep Boltzmann Machines",
+    "slug": "deep-boltzmann-machines",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/dbm.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Rectified Linear Units Improve Restricted Boltzmann Machines",
+    "slug": "rectified-linear-units-improve-restricted-boltzmann-machines",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/relu.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Deep Neural Networks for Acoustic Modeling in Speech Recognition",
+    "slug": "deep-neural-networks-for-acoustic-modeling-in-speech-recognition",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/dnn.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "ImageNet Classification with Deep Convolutional Neural Networks (AlexNet)",
+    "slug": "imagenet-classification-with-deep-convolutional-neural-networks-alexnet",
+    "source_url": "https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf",
+    "pdf_url": "https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "On the Importance of Initialization and Momentum in Deep Learning",
+    "slug": "on-the-importance-of-initialization-and-momentum-in-deep-learning",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/momentum.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Dropout: A Simple Way to Prevent Neural Networks from Overfitting",
+    "slug": "dropout-a-simple-way-to-prevent-neural-networks-from-overfitting",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf",
+    "pdf_url": "https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Distilling the Knowledge in a Neural Network",
+    "slug": "distilling-the-knowledge-in-a-neural-network",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/distillation.pdf",
+    "pdf_url": "https://www.cs.toronto.edu/~hinton/absps/distillation.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Layer Normalization",
+    "slug": "layer-normalization",
+    "source_url": "https://arxiv.org/pdf/1607.06450.pdf",
+    "pdf_url": "https://arxiv.org/pdf/1607.06450.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Using Fast Weights to Attend to the Recent Past",
+    "slug": "using-fast-weights-to-attend-to-the-recent-past",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/fastweights.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Dynamic Routing Between Capsules",
+    "slug": "dynamic-routing-between-capsules",
+    "source_url": "https://arxiv.org/pdf/1710.09829.pdf",
+    "pdf_url": "https://arxiv.org/pdf/1710.09829.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "Matrix Capsules with EM Routing",
+    "slug": "matrix-capsules-with-em-routing",
+    "source_url": "https://arxiv.org/pdf/1804.04241.pdf",
+    "pdf_url": "https://arxiv.org/pdf/1804.04241.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "How to Represent Part-Whole Hierarchies in a Neural Network",
+    "slug": "how-to-represent-part-whole-hierarchies-in-a-neural-network",
+    "source_url": "https://arxiv.org/pdf/2108.04355.pdf",
+    "pdf_url": "https://arxiv.org/pdf/2108.04355.pdf",
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  },
+  {
+    "title": "The Forward-Forward Algorithm: Some Preliminary Investigations",
+    "slug": "the-forward-forward-algorithm-some-preliminary-investigations",
+    "source_url": "https://www.cs.toronto.edu/~hinton/absps/forwardforward.pdf",
+    "pdf_url": null,
+    "status": "not_attempted",
+    "downloaded_pdf": null
+  }
+]
