@@ -120,13 +120,14 @@ flowchart TD
 
 If you're new to Geoffrey Hinton's work, a good progression is:
 
-```mermaid
+
 # Recommended Learning Path
 
 If you're new to Geoffrey Hinton's work, follow this 11-step progression through the core breakthroughs (highlighted in gold in the
-flowchart TD
-[Architecture & Evolution Map](#architecture--evolution-map) above):
 
+[Architecture & Evolution Map](#architecture--evolution-map) above):
+```mermaid
+flowchart TD
 | Step | Milestone | Diagram Bucket & Node | Primary PyTorch Notebook | Paper Archive | Core Algorithmic Focus |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1** | **Backpropagation** | [Bucket 2 · `P03`](#architecture--evolution-map) | [📘 `#03` Back-Propagating Errors](./Learning_representations_by_back_propagating_errors.ipynb) | [📄 PDF / Manifest](./resources/papers/) | Multi-layer chain rule, hidden representation learning, and gradient flow. |
@@ -144,7 +145,6 @@ flowchart TD
 %% Highlight the 11 Recommended Learning Path Milestones
     classDef learningPath stroke:#f5a623,stroke-width:3px,color:#000,fill:#fff8e7
     class P03,P02,P13,P14,P15,P17,P21,P23,P24,P27,P30 learningPath
-    
 ```
 
 
