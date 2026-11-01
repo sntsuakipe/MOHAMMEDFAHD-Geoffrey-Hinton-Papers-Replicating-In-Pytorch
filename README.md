@@ -83,6 +83,7 @@ If you're new to Geoffrey Hinton's work, follow this 11-step progression through
 ```
 
 
+
 # Philosophy
 
 The goal of this repository is **education rather than benchmark reproduction**.
