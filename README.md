@@ -4,9 +4,7 @@ Educational **PyTorch** implementations of the most influential research papers 
 
 This repository follows the evolution of deep learning, from **Boltzmann Machines** and **Backpropagation** to **Deep Belief Networks**, **Dropout**, **Knowledge Distillation**, **Capsule Networks**, the **Forward-Forward Algorithm**, and **t-SNE**.
 
----
-
-##  Goals
+## Goals
 
 - Read and understand Geoffrey Hinton's foundational papers.
 - Reproduce the core algorithms in PyTorch.
@@ -16,11 +14,9 @@ This repository follows the evolution of deep learning, from **Boltzmann Machine
 
 ---
 
-# Paper Roadmap
-
 # Architecture & Evolution Map
 
-This diagram groups all 30 papers into the 8 core milestones highlighted in the repository overview. Click any node in GitHub to open its corresponding PyTorch notebook:
+This diagram groups all 30 papers into the 8 core milestones highlighted in the repository overview. The **11 Recommended Learning Path milestones** are highlighted in gold. Click any node in GitHub to open its corresponding PyTorch notebook:
 
 ```mermaid
 %%{init: {"theme": "default", "themeVariables": {"primaryColor": "#4a90e2", "secondaryColor": "#50e3c2", "lineColor": "#3399ff", "nodeBorder": "#3399ff"}}}%%
@@ -112,20 +108,56 @@ flowchart TD
     click P28 "./Matrix_Capsules_with_EM_Routing.ipynb"
     click P29 "./How_to_Represent_Part_Whole_Hierarchies_in_a_Neural_Network.ipynb"
     click P30 "./The_Forward_Forward_Algorithm_Some_Preliminary_Investigations.ipynb"
-%% Highlight the 11 Recommended Learning Path Milestones
+
+    %% Highlight the 11 Recommended Learning Path Milestones
     classDef learningPath stroke:#f5a623,stroke-width:3px,color:#000,fill:#fff8e7
     class P03,P02,P13,P14,P15,P17,P21,P23,P24,P27,P30 learningPath
 ```
 
 ---
 
+# Paper Roadmap
+
+> **Paper Archive & Manifest:** Local open-access PDFs, provenance metadata, and downloader scripts are maintained in [`resources/papers/`](./resources/papers/).
+
+| # | Year | Thematic Bucket | Paper | PyTorch Notebook | Paper PDF / Archive |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 01 | 1977 | **Boltzmann & Energy** | Relaxation and Its Role in Vision (PhD Thesis) | [📘 Notebook](./Relaxation_and_its_Role_in_Vision.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 02 | 1985 | **Boltzmann & Energy** | A Learning Algorithm for Boltzmann Machines | [📘 Notebook](./A_Learning_Algorithm_for_Boltzmann_Machines.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 03 | 1986 | **Backpropagation** | Learning Representations by Back-Propagating Errors | [📘 Notebook](./Learning_representations_by_back_propagating_errors.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 04 | 1986 | **Backpropagation** | Distributed Representations | [📘 Notebook](./Distributed_Representations.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 05 | 1986 | **Backpropagation** | Learning Internal Representations by Error Propagation | [📘 Notebook](./Learning_Internal_Representations_by_Error_Propagation.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 06 | 1991 | **Distillation & MoE** | Adaptive Mixtures of Local Experts | [📘 Notebook](./Adaptive_Mixtures_of_Local_Experts.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 07 | 1992 | **Backpropagation** | How Neural Networks Learn from Experience | [📘 Notebook](./How_Neural_Networks_Learn_from_Experience.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 08 | 1992 | **t-SNE & Visualization** | Stochastic Neighbor Embedding | [📘 Notebook](./Stochastic_Neighbor_Embedding.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 09 | 1994 | **Deep Belief Nets** | Autoencoders, Minimum Description Length and Helmholtz Free Energy | [📘 Notebook](./Autoencoders_Minimum_Description_Length_and_Helmholtz_Free_Energy.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 10 | 1995 | **Deep Belief Nets** | The Helmholtz Machine | [📘 Notebook](./The_Helmholtz_Machine.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 11 | 1995 | **Deep Belief Nets** | The Wake-Sleep Algorithm | [📘 Notebook](./The_wake_sleep_algorithm_for_unsupervised_neural_networks.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 12 | 1999 | **Boltzmann & Energy** | Products of Experts | [📘 Notebook](./Products_of_Experts.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 13 | 2002 | **Boltzmann & Energy** | Training Products of Experts by Minimizing Contrastive Divergence | [📘 Notebook](./Training_Products_of_Experts_by_Minimizing_Contrastive_Divergence.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 14 | 2006 | **Deep Belief Nets** | A Fast Learning Algorithm for Deep Belief Nets | [📘 Notebook](./A_fast_learning_algorithm_for_deep_belief_nets.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 15 | 2006 | **Deep Belief Nets** | Reducing the Dimensionality of Data with Neural Networks | [📘 Notebook](./Reducing_the_Dimensionality_of_Data_with_Neural_Networks.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 16 | 2007 | **Boltzmann & Energy** | Restricted Boltzmann Machines for Collaborative Filtering | [📘 Notebook](./Restricted_Boltzmann_Machines_for_Collaborative_Filtering.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 17 | 2008 | **t-SNE & Visualization** | Visualizing Data using t-SNE | [📘 Notebook](./Visualizing_Data_using_t_SNE.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 18 | 2009 | **Deep Belief Nets** | Deep Boltzmann Machines | [📘 Notebook](./Deep_Boltzmann_Machines.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 19 | 2010 | **Boltzmann & Energy** | Rectified Linear Units Improve Restricted Boltzmann Machines | [📘 Notebook](./Rectified_Linear_Units_Improve_Restricted_Boltzmann_Machines.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 20 | 2012 | **Deep Belief Nets** | Deep Neural Networks for Acoustic Modeling in Speech Recognition | [📘 Notebook](./Deep_Neural_Networks_for_Acoustic_Modeling_in_Speech_Recognition.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 21 | 2012 | **Dropout & Scale** | ImageNet Classification with Deep Convolutional Neural Networks (AlexNet) | [📘 Notebook](./ImageNet_Classification_with_Deep_Convolutional_Neural_Networks_AlexNet.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 22 | 2013 | **Dropout & Scale** | On the Importance of Initialization and Momentum in Deep Learning | [📘 Notebook](./On_the_importance_of_initialization_and_momentum_in_deep_learning.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 23 | 2014 | **Dropout & Scale** | Dropout: A Simple Way to Prevent Neural Networks from Overfitting | [📘 Notebook](./Dropout_A_Simple_Way_to_Prevent_Neural_Networks_from_overfitting.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 24 | 2015 | **Distillation & MoE** | Distilling the Knowledge in a Neural Network | [📘 Notebook](./Distilling_the_Knowledge_in_a_Neural_Network.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 25 | 2016 | **Dropout & Scale** | Layer Normalization | [📘 Notebook](./Layer_Normalization.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 26 | 2016 | **Forward-Forward** | Using Fast Weights to Attend to the Recent Past | [📘 Notebook](./Using_Fast_Weights_to_Attend_to_the_Recent_Past.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 27 | 2017 | **Capsule Networks** | Dynamic Routing Between Capsules | [📘 Notebook](./Dynamic_Routing_Between_Capsules.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 28 | 2018 | **Capsule Networks** | Matrix Capsules with EM Routing | [📘 Notebook](./Matrix_Capsules_with_EM_Routing.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 29 | 2021 | **Capsule Networks** | How to Represent Part-Whole Hierarchies in a Neural Network | [📘 Notebook](./How_to_Represent_Part_Whole_Hierarchies_in_a_Neural_Network.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+| 30 | 2022 | **Forward-Forward** | The Forward-Forward Algorithm: Some Preliminary Investigations | [📘 Notebook](./The_Forward_Forward_Algorithm_Some_Preliminary_Investigations.ipynb) | [📄 PDF / Manifest](./resources/papers/) |
+
+---
+
 # Recommended Learning Path
 
-If you're new to Geoffrey Hinton's work, a good progression is:
-
-If you're new to Geoffrey Hinton's work, follow this 11-step progression through the core breakthroughs (highlighted in gold in the
-
-[Architecture & Evolution Map](#architecture--evolution-map) above):
+If you're new to Geoffrey Hinton's work, follow this 11-step progression through the core breakthroughs (highlighted in gold in the [Architecture & Evolution Map](#architecture--evolution-map) above):
 
 | Step | Milestone | Diagram Bucket & Node | Primary PyTorch Notebook | Paper Archive | Core Algorithmic Focus |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -141,6 +173,7 @@ If you're new to Geoffrey Hinton's work, follow this 11-step progression through
 | **10** | **Capsule Networks** | [Bucket 7 · `P27`](#architecture--evolution-map) | [📘 `#27` Dynamic Routing Capsules](./Dynamic_Routing_Between_Capsules.ipynb) | [📄 PDF / Manifest](./resources/papers/) | Vector-output capsules, squashing non-linearity, and iterative routing-by-agreement. |
 | **11** | **Forward-Forward Algorithm** | [Bucket 8 · `P30`](#architecture--evolution-map) | [📘 `#30` Forward-Forward Algorithm](./The_Forward_Forward_Algorithm_Some_Preliminary_Investigations.ipynb) | [📄 PDF / Manifest](./resources/papers/) | Layer-local positive vs. negative goodness passes without backward gradient propagation. |
 
+---
 
 # Philosophy
 
@@ -157,8 +190,6 @@ Implementations prioritize:
 
 Whenever the original paper uses computationally expensive experiments, simplified versions are provided while preserving the core algorithmic ideas.
 
----
-
 # Disclaimer
 
 These implementations may use:
@@ -170,8 +201,6 @@ These implementations may use:
 
 They should be considered **educational reproductions**, not exact replications of the original experimental results.
 
----
-
 # References
 
 Each project includes:
@@ -181,15 +210,10 @@ Each project includes:
 - Implementation notes
 - Additional resources when appropriate
 
----
-
 # Author
 
 **Mohammed Fahd Abrah**
-
 AI Engineer • Technical Writer
-
----
 
 # License
 
