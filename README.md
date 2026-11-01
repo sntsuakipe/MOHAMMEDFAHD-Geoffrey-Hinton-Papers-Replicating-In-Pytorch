@@ -18,38 +18,101 @@ This repository follows the evolution of deep learning, from **Boltzmann Machine
 
 # Paper Roadmap
 
-| # | Year | Paper |
-|--:|----:|--------|
-| 01 | 1977 | Relaxation and Its Role in Vision (PhD Thesis) |
-| 02 | 1985 | A Learning Algorithm for Boltzmann Machines |
-| 03 | 1986 | Learning Representations by Back-Propagating Errors |
-| 04 | 1986 | Distributed Representations |
-| 05 | 1986 | Learning Internal Representations by Error Propagation |
-| 06 | 1991 | Adaptive Mixtures of Local Experts |
-| 07 | 1992 | How Neural Networks Learn from Experience |
-| 08 | 1992 | Stochastic Neighbor Embedding |
-| 09 | 1994 | Autoencoders, Minimum Description Length and Helmholtz Free Energy |
-| 10 | 1995 | The Helmholtz Machine |
-| 11 | 1995 | The Wake-Sleep Algorithm |
-| 12 | 1999 | Products of Experts |
-| 13 | 2002 | Training Products of Experts by Minimizing Contrastive Divergence |
-| 14 | 2006 | A Fast Learning Algorithm for Deep Belief Nets |
-| 15 | 2006 | Reducing the Dimensionality of Data with Neural Networks |
-| 16 | 2007 | Restricted Boltzmann Machines for Collaborative Filtering |
-| 17 | 2008 | Visualizing Data using t-SNE |
-| 18 | 2009 | Deep Boltzmann Machines |
-| 19 | 2010 | Rectified Linear Units Improve Restricted Boltzmann Machines |
-| 20 | 2012 | Deep Neural Networks for Acoustic Modeling in Speech Recognition |
-| 21 | 2012 | ImageNet Classification with Deep Convolutional Neural Networks (AlexNet) |
-| 22 | 2013 | On the Importance of Initialization and Momentum in Deep Learning |
-| 23 | 2014 | Dropout: A Simple Way to Prevent Neural Networks from Overfitting |
-| 24 | 2015 | Distilling the Knowledge in a Neural Network |
-| 25 | 2016 | Layer Normalization |
-| 26 | 2016 | Using Fast Weights to Attend to the Recent Past |
-| 27 | 2017 | Dynamic Routing Between Capsules |
-| 28 | 2018 | Matrix Capsules with EM Routing |
-| 29 | 2021 | How to Represent Part-Whole Hierarchies in a Neural Network |
-| 30 | 2022 | The Forward-Forward Algorithm: Some Preliminary Investigations |
+# Architecture & Evolution Map
+
+This diagram groups all 30 papers into the 8 core milestones highlighted in the repository overview. Click any node in GitHub to open its corresponding PyTorch notebook:
+
+```mermaid
+%%{init: {"theme": "default", "themeVariables": {"primaryColor": "#4a90e2", "secondaryColor": "#50e3c2", "lineColor": "#3399ff", "nodeBorder": "#3399ff"}}}%%
+flowchart TD
+    subgraph B1["1. Boltzmann Machines & Energy Foundations"]
+        P01["01 (1977) Relaxation in Vision"] --> P02["02 (1985) Boltzmann Machines"]
+        P02 --> P12["12 (1999) Products of Experts"]
+        P12 --> P13["13 (2002) Contrastive Divergence"]
+        P13 --> P16["16 (2007) RBMs for Collaborative Filtering"]
+        P13 --> P19["19 (2010) ReLU Improves RBMs"]
+    end
+
+    subgraph B2["2. Backpropagation & Distributed Representations"]
+        P03["03 (1986) Back-Propagating Errors"] --> P04["04 (1986) Distributed Representations"]
+        P04 --> P05["05 (1986) Internal Reps by Error Prop"]
+        P05 --> P07["07 (1992) Learning from Experience"]
+    end
+
+    subgraph B3["3. Deep Belief Nets & Generative Pre-Training"]
+        P09["09 (1994) Autoencoders, MDL & Free Energy"] --> P10["10 (1995) The Helmholtz Machine"]
+        P10 --> P11["11 (1995) The Wake-Sleep Algorithm"]
+        P11 --> P14["14 (2006) Fast Learning for Deep Belief Nets"]
+        P14 --> P15["15 (2006) Dimensionality Reduction (Deep AE)"]
+        P14 --> P18["18 (2009) Deep Boltzmann Machines"]
+        P14 --> P20["20 (2012) DNNs for Speech Recognition"]
+    end
+
+    subgraph B4["4. t-SNE & Manifold Visualization"]
+        P08["08 (1992) Stochastic Neighbor Embedding"] --> P17["17 (2008) Visualizing Data using t-SNE"]
+    end
+
+    subgraph B5["5. Dropout, Scale & Deep Optimization"]
+        P21["21 (2012) AlexNet Deep CNNs"] --> P22["22 (2013) Initialization and Momentum"]
+        P22 --> P23["23 (2014) Dropout Regularization"]
+        P23 --> P25["25 (2016) Layer Normalization"]
+    end
+
+    subgraph B6["6. Knowledge Distillation & Ensembles"]
+        P06["06 (1991) Mixtures of Local Experts"] --> P24["24 (2015) Knowledge Distillation"]
+    end
+
+    subgraph B7["7. Capsule Networks & Part-Whole Hierarchies"]
+        P27["27 (2017) Dynamic Routing Between Capsules"] --> P28["28 (2018) Matrix Capsules with EM Routing"]
+        P28 --> P29["29 (2021) Part-Whole Hierarchies (GLOM)"]
+    end
+
+    subgraph B8["8. Forward-Forward & Biologically Plausible Learning"]
+        P26["26 (2016) Fast Weights Attention"] --> P30["30 (2022) The Forward-Forward Algorithm"]
+    end
+
+    %% Cross-Era Evolutionary Links
+    P13 ==> P14
+    P07 ==> P15
+    P15 ==> P17
+    P20 ==> P21
+    P23 ==> P24
+    P21 ==> P27
+    P25 ==> P26
+    P02 -.-> P30
+
+    %% Clickable Repository Links
+    click P01 "./Relaxation_and_its_Role_in_Vision.ipynb"
+    click P02 "./A_Learning_Algorithm_for_Boltzmann_Machines.ipynb"
+    click P03 "./Learning_representations_by_back_propagating_errors.ipynb"
+    click P04 "./Distributed_Representations.ipynb"
+    click P05 "./Learning_Internal_Representations_by_Error_Propagation.ipynb"
+    click P06 "./Adaptive_Mixtures_of_Local_Experts.ipynb"
+    click P07 "./How_Neural_Networks_Learn_from_Experience.ipynb"
+    click P08 "./Stochastic_Neighbor_Embedding.ipynb"
+    click P09 "./Autoencoders_Minimum_Description_Length_and_Helmholtz_Free_Energy.ipynb"
+    click P10 "./The_Helmholtz_Machine.ipynb"
+    click P11 "./The_wake_sleep_algorithm_for_unsupervised_neural_networks.ipynb"
+    click P12 "./Products_of_Experts.ipynb"
+    click P13 "./Training_Products_of_Experts_by_Minimizing_Contrastive_Divergence.ipynb"
+    click P14 "./A_fast_learning_algorithm_for_deep_belief_nets.ipynb"
+    click P15 "./Reducing_the_Dimensionality_of_Data_with_Neural_Networks.ipynb"
+    click P16 "./Restricted_Boltzmann_Machines_for_Collaborative_Filtering.ipynb"
+    click P17 "./Visualizing_Data_using_t_SNE.ipynb"
+    click P18 "./Deep_Boltzmann_Machines.ipynb"
+    click P19 "./Rectified_Linear_Units_Improve_Restricted_Boltzmann_Machines.ipynb"
+    click P20 "./Deep_Neural_Networks_for_Acoustic_Modeling_in_Speech_Recognition.ipynb"
+    click P21 "./ImageNet_Classification_with_Deep_Convolutional_Neural_Networks_AlexNet.ipynb"
+    click P22 "./On_the_importance_of_initialization_and_momentum_in_deep_learning.ipynb"
+    click P23 "./Dropout_A_Simple_Way_to_Prevent_Neural_Networks_from_overfitting.ipynb"
+    click P24 "./Distilling_the_Knowledge_in_a_Neural_Network.ipynb"
+    click P25 "./Layer_Normalization.ipynb"
+    click P26 "./Using_Fast_Weights_to_Attend_to_the_Recent_Past.ipynb"
+    click P27 "./Dynamic_Routing_Between_Capsules.ipynb"
+    click P28 "./Matrix_Capsules_with_EM_Routing.ipynb"
+    click P29 "./How_to_Represent_Part_Whole_Hierarchies_in_a_Neural_Network.ipynb"
+    click P30 "./The_Forward_Forward_Algorithm_Some_Preliminary_Investigations.ipynb"
+```
 
 ---
 
@@ -60,7 +123,9 @@ If you're new to Geoffrey Hinton's work, a good progression is:
 ```mermaid
 # Recommended Learning Path
 
-If you're new to Geoffrey Hinton's work, follow this 11-step progression through the core breakthroughs (highlighted in gold in the [Architecture & Evolution Map](#architecture--evolution-map) above):
+If you're new to Geoffrey Hinton's work, follow this 11-step progression through the core breakthroughs (highlighted in gold in the
+flowchart TD
+[Architecture & Evolution Map](#architecture--evolution-map) above):
 
 | Step | Milestone | Diagram Bucket & Node | Primary PyTorch Notebook | Paper Archive | Core Algorithmic Focus |
 | :--- | :--- | :--- | :--- | :--- | :--- |
