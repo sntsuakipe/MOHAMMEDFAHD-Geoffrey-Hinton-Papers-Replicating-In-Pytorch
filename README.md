@@ -112,6 +112,9 @@ flowchart TD
     click P28 "./Matrix_Capsules_with_EM_Routing.ipynb"
     click P29 "./How_to_Represent_Part_Whole_Hierarchies_in_a_Neural_Network.ipynb"
     click P30 "./The_Forward_Forward_Algorithm_Some_Preliminary_Investigations.ipynb"
+%% Highlight the 11 Recommended Learning Path Milestones
+    classDef learningPath stroke:#f5a623,stroke-width:3px,color:#000,fill:#fff8e7
+    class P03,P02,P13,P14,P15,P17,P21,P23,P24,P27,P30 learningPath
 ```
 
 ---
@@ -120,14 +123,10 @@ flowchart TD
 
 If you're new to Geoffrey Hinton's work, a good progression is:
 
-
-# Recommended Learning Path
-
 If you're new to Geoffrey Hinton's work, follow this 11-step progression through the core breakthroughs (highlighted in gold in the
 
 [Architecture & Evolution Map](#architecture--evolution-map) above):
-```mermaid
-flowchart TD
+
 | Step | Milestone | Diagram Bucket & Node | Primary PyTorch Notebook | Paper Archive | Core Algorithmic Focus |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1** | **Backpropagation** | [Bucket 2 · `P03`](#architecture--evolution-map) | [📘 `#03` Back-Propagating Errors](./Learning_representations_by_back_propagating_errors.ipynb) | [📄 PDF / Manifest](./resources/papers/) | Multi-layer chain rule, hidden representation learning, and gradient flow. |
@@ -141,12 +140,6 @@ flowchart TD
 | **9** | **Knowledge Distillation** | [Bucket 6 · `P24`](#architecture--evolution-map) | [📘 `#24` Knowledge Distillation](./Distilling_the_Knowledge_in_a_Neural_Network.ipynb) | [📄 PDF / Manifest](./resources/papers/) | Temperature-scaled softmax ("dark knowledge") transfer from teacher to student. |
 | **10** | **Capsule Networks** | [Bucket 7 · `P27`](#architecture--evolution-map) | [📘 `#27` Dynamic Routing Capsules](./Dynamic_Routing_Between_Capsules.ipynb) | [📄 PDF / Manifest](./resources/papers/) | Vector-output capsules, squashing non-linearity, and iterative routing-by-agreement. |
 | **11** | **Forward-Forward Algorithm** | [Bucket 8 · `P30`](#architecture--evolution-map) | [📘 `#30` Forward-Forward Algorithm](./The_Forward_Forward_Algorithm_Some_Preliminary_Investigations.ipynb) | [📄 PDF / Manifest](./resources/papers/) | Layer-local positive vs. negative goodness passes without backward gradient propagation. |
-
-%% Highlight the 11 Recommended Learning Path Milestones
-    classDef learningPath stroke:#f5a623,stroke-width:3px,color:#000,fill:#fff8e7
-    class P03,P02,P13,P14,P15,P17,P21,P23,P24,P27,P30 learningPath
-```
-
 
 
 # Philosophy
